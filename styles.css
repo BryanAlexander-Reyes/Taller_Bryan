@@ -1,0 +1,421 @@
+:root {
+    --bg-main: #F9F7F2;      /* Beige muy suave (fondo principal) */
+    --bg-card: #FFFFFF;      /* Blanco puro para que las tarjetas resalten */
+    --bg-nav: #F2EFE9;       /* Beige un poco más oscuro para la Nav */
+    --accent-sand: #D9D2C5;  /* Color arena para bordes y detalles */
+    --text-dark: #4A453E;    /* Gris cálido oscuro para textos */
+    --text-muted: #8C857B;   /* Gris cálido suave para párrafos */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-main);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Para que el scroll sea fluido */
+}
+
+/* NAV VERTICAL */
+.nav_vertical {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background: #ffffff; /* Más moderno oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.logo-mini {
+    width: 90px;
+    margin-bottom: 50px;
+}
+
+.iconav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.iconav li a {
+    color: #000000;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.iconav li a:hover {
+    color: #007bff;
+}
+
+/* CONTENEDOR PRINCIPAL - AMPLIO */
+.container {
+    margin-left: 80px; /* Ancho de la nav */
+    width: calc(100% - 80px);
+}
+
+section {
+    padding: 80px 5%; /* Padding porcentual para amplitud */
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* INTRO */
+/* ========================= */
+/* SECCIÓN INTRO REESTRUCTURADA */
+/* ========================= */
+
+.intro {
+    display: flex;
+    flex-direction: row; /* Alinea texto y foto de lado a lado */
+    justify-content: space-around;
+    align-items: center;
+    min-height: 80vh; /* Ocupa casi toda la pantalla para que sea impactante */
+    padding: 0 10%;
+    background-color: #ffffff;
+    gap: 50px;
+}
+
+/* CONTENEDOR DE TEXTO (H1 y P) */
+.BaRB {
+    max-width: 600px; /* Evita que el texto se estire demasiado */
+    text-align: left;
+}
+
+.BaRB h1 {
+    font-size: 5rem; /* Tamaño gigante para el nombre */
+    margin: 0;
+    color: #1a1a1a;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.BaRB p {
+    font-size: 1.5rem; /* Párrafo grande y legible */
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* CONTENEDOR DE LA FOTO */
+.foto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto img {
+    width: 350px; /* Tamaño de la imagen */
+    height: 350px;
+    border-radius: 50%; /* Hace la foto perfectamente redonda */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    border: 10px solid #f0f0f0; /* Un marco sutil */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Sombra elegante */
+    
+    /* Aplicación de la Animación */
+    animation: flotarFoto 4s ease-in-out infinite;
+}
+
+/* ANIMACIÓN DE FLOTADO */
+@keyframes flotarFoto {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px); /* Sube la foto */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* RESPONSIVE (Para celulares) */
+@media (max-width: 900px) {
+    .intro {
+        flex-direction: column-reverse; /* En celular la foto va arriba o el texto abajo */
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .BaRB {
+        text-align: center;
+    }
+
+    .BaRB h1 {
+        font-size: 3.5rem;
+    }
+
+    .foto img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* HABILIDADES GRID */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.skill-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    background: #333;
+    color: #fff;
+}
+
+.skill-item i { font-size: 3rem; display: block; margin-bottom: 10px; }
+/* Contenedor principal de la sección */
+.formacion {
+    padding: 60px 5%;
+    background-color: #f9f9f9;
+}
+
+.formacion h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+/* El contenedor Grid hace que todo se vea más amplio */
+.formacion-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo base de la Card */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Cabecera de la card (Icono y Badge) */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* --- COLORES PARA FINALIZADO (Verde) --- */
+.card.finalizado {
+    border-bottom: 5px solid #2ecc71;
+}
+.card.finalizado .card-icon {
+    background: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+}
+.card.finalizado .badge {
+    background: #e8f8f0;
+    color: #27ae60;
+}
+
+/* --- COLORES PARA EN PROCESO (Azul) --- */
+.card.en-proceso {
+    border-bottom: 5px solid #3498db;
+}
+.card.en-proceso .card-icon {
+    background: rgba(52, 152, 219, 0.1);
+    color: #2980b9;
+}
+.card.en-proceso .badge {
+    background: #eaf2f8;
+    color: #2980b9;
+}
+
+/* Texto de la card */
+.card-info h4 {
+    color: #888;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.card-info h3 {
+    margin: 8px 0;
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.2;
+}
+
+.card-info p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* HOBBIES GRID (MÁS AMPLIO) */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+.hobby-card {
+    height: 200px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #000;
+    transition: 0.4s;
+}
+.senderismo { background: url('asset/senderismo.png') center/cover; 
+}
+.deportes { background: url('asset/voley.png') center/cover; 
+}
+.videojuegos { 
+    background: url('asset/videojuego.png') center/cover; 
+}
+.programacion { background: url('asset/programacion.png') center/cover; 
+}
+.fotografia { background: url('asset/fotografia.png') center/cover; 
+}
+/* SUEÑOS (ESTILO MODERNO) */
+.sueños-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.sueño-card0 {
+    background: url(asset/sueño2.png) center/cover; 
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+.sueño-card2 {
+    background: url(asset/sueño1.png) center/cover;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+.sueño-card1 {
+    background: url(asset/sueño.png) center/cover;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-left: 0; width: 100%; }
+    .nav_vertical { 
+        height: 60px; width: 100%; bottom: 0; top: auto; 
+        flex-direction: row; justify-content: center;
+    }
+    .logo-mini { display: none; }
+    .iconav { flex-direction: row; gap: 20px; }
+    .intro { flex-direction: column !important; text-align: center; }
+    .BaRB { text-align: center; }
+    .sueños-grid { grid-template-columns: 1fr; }
+}
+/* sccion video*/
+
+.video-section {
+    padding: 100px 10%;
+    text-align: center;
+    background: #ffffff;
+}
+
+.video-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 800px;
+    box-shadow: 0 20px 40px rgba(73, 73, 73, 0.6);
+    transition: transform 0.4s ease;
+}
+
+.video-container img {
+    width: 100%;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.video-container:hover img {
+    filter: brightness(0.6);
+    transform: scale(1.05);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 20px 25px;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+.video-container:hover .play-button {
+    background: #00ffcc;
+    color: black;
+    transform: translate(-50%, -50%) scale(1.1);
+}
