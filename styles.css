@@ -318,16 +318,16 @@ section {
     text-shadow: 1px 1px 5px #000;
     transition: 0.4s;
 }
-.senderismo { background: url('assets/senderismo.png') center/cover; 
+.senderismo { background: url('asset/senderismo.png') center/cover; 
 }
-.deportes { background: url('assets/voley.png') center/cover; 
+.deportes { background: url('asset/voley.png') center/cover; 
 }
 .videojuegos { 
-    background: url('assets/videojuego.png') center/cover; 
+    background: url('asset/videojuego.png') center/cover; 
 }
-.programacion { background: url('assets/programacion.png') center/cover; 
+.programacion { background: url('asset/programacion.png') center/cover; 
 }
-.fotografia { background: url('assets/fotografia.png') center/cover; 
+.fotografia { background: url('asset/fotografia.png') center/cover; 
 }
 /* SUEÑOS (ESTILO MODERNO) */
 .sueños-grid {
@@ -338,21 +338,21 @@ section {
 }
 
 .sueño-card0 {
-    background: url(assets/sueño2.png) center/cover; 
+    background: url(asset/sueño2.png) center/cover; 
     color: white;
     padding: 40px;
     border-radius: 20px;
     text-align: center;
 }
 .sueño-card2 {
-    background: url(assets/sueño1.png) center/cover;
+    background: url(asset/sueño1.png) center/cover;
     color: white;
     padding: 40px;
     border-radius: 20px;
     text-align: center;
 }
 .sueño-card1 {
-    background: url(assets/sueño.png) center/cover;
+    background: url(asset/sueño.png) center/cover;
     color: white;
     padding: 40px;
     border-radius: 20px;
